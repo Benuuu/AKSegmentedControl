@@ -107,16 +107,17 @@
         
         if (increment < separtorsNumber)
         {
-            UIImageView *separatorImageView = separatorsArray[increment];
-            [separatorImageView setFrame:CGRectMake(CGRectGetMaxX(button.frame),
-                                                    offsetY,
-                                                    separatorWidth,
-                                                    CGRectGetHeight(self.bounds) - _contentEdgeInsets.top - _contentEdgeInsets.bottom)];
+            [self positionSeparatorImageAtIndex:increment atPoint:CGPointMake(CGRectGetMaxX(button.frame), offsetY)];
         }
         
         increment++;
         offsetX = CGRectGetMaxX(button.frame);
     }
+}
+
+- (void)positionSeparatorImageAtIndex:(NSInteger)index atPoint:(CGPoint)point {
+    UIImageView *separatorImageView = separatorsArray[index];
+    [separatorImageView setFrame:CGRectMake(point.x, point.y, separatorImageView.image.size.width, CGRectGetHeight(self.bounds) - _contentEdgeInsets.top - _contentEdgeInsets.bottom)];
 }
 
 #pragma mark - Button Actions

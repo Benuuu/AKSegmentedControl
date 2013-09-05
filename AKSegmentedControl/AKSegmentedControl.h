@@ -44,5 +44,6 @@ typedef enum : NSUInteger
 
 - (void)setSelectedIndex:(NSUInteger)index;
 - (void)setSelectedIndexes:(NSIndexSet *)indexSet byExpandingSelection:(BOOL)expandSelection;
+- (void)positionSeparatorImageAtIndex:(NSInteger)index atPoint:(CGPoint)point;
 
 @end
